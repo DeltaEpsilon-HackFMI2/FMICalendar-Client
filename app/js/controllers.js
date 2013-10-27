@@ -2,16 +2,26 @@
 
 /* Controllers */
 
+function isEmpty(map) {
+  for(var key in map) {
+    if (map.hasOwnProperty(key)) {
+      return false;
+    }
+  }
+  return true;
+}
+
 var schedulecatControllers = angular.module('schedulecatControllers', []);
 
-schedulecatControllers.controller('ScheduleMenuCtrl', ['$scope', 'ScheduleMenu',
-    function($scope, ScheduleMenu) {
+schedulecatControllers.controller('ScheduleCtrl', ['$scope', 'ScheduleMenu','Event',
+    function($scope, ScheduleMenu, Event) {
       var root_elem = 'Home';
+      
       $scope.menu = ScheduleMenu.query(function() {
-      	console.log("ScheduleMenu");
         $scope.root = $scope.menu[root_elem];
         $scope.history = [root_elem];
       });
+      
       $scope.setRootLevel = function(rootUri) {
         var index_of_uri = $scope.history.indexOf(rootUri);
         if(index_of_uri == $scope.history.length - 1) {
@@ -25,7 +35,14 @@ schedulecatControllers.controller('ScheduleMenuCtrl', ['$scope', 'ScheduleMenu',
           }
           $scope.root = new_root;
           $scope.history = new_history
-        } else if(rootUri in $scope.root) { 
+        } else if(rootUri in $scope.root) {
+          console.log(rootUri);
+          // if($scope.root[rootUri].length == 0) {
+          //   alert('dddd');
+          //   $scope.loadEvents();
+          //   return;
+          // }
+          
           $scope.history.push(rootUri);
           $scope.root = $scope.root[rootUri];
         } else {
@@ -33,14 +50,13 @@ schedulecatControllers.controller('ScheduleMenuCtrl', ['$scope', 'ScheduleMenu',
           $scope.history = [root_elem, rootUri];
         }
       };
-    }]);
+      
+      $scope.loadEvents = function() {
+        alert('aaa');
+        $scope.events = Event.query();  
+      }; 
 
-var eventControllers = angular.module('eventControllers', []);
-
-eventControllers.controller('EventCtrl', ['$scope', 'EventInfo',
-    function($scope, EventInfo) {
       /* config object */
-      //console.log($scope);
       $scope.uiConfig = {
         calendar:{
           header:{
@@ -63,21 +79,7 @@ eventControllers.controller('EventCtrl', ['$scope', 'EventInfo',
           axisFormat:'H(:mm)'
         }
       };
-
-      var date = new Date();
-      var d = date.getDate();
-      var m = date.getMonth();
-      var y = date.getFullYear();
-      $scope.events = [
-        {title: 'All Day Event',start: new Date(y, m, 1)},
-        {title: 'Long Event',start: new Date(y, m, d - 5),end: new Date(y, m, d - 2)},
-        {id: 999,title: 'Repeating Event',start: new Date(y, m, d - 3, 16, 0),allDay: false},
-        {id: 999,title: 'Repeating Event',start: new Date(y, m, d + 4, 16, 0),allDay: false},
-        {title: 'Birthday Party',start: new Date(y, m, d + 1, 19, 0),end: new Date(y, m, d + 1, 22, 30),allDay: false},
-        {title: 'Click for Google',start: new Date(y, m, 28),end: new Date(y, m, 29),url: 'http://google.com/'}
-        ];
     }]);
-
 
 // eventControllers.controller('EventInfoCtrl', ['$scope', 'EventInfo',
 //     function($scope, EventInfo) {

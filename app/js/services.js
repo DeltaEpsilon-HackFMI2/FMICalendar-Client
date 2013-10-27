@@ -2,23 +2,23 @@
 
 /* Services */
 
-var phonecatServices = angular.module('phonecatServices', ['ngResource']);
-
-phonecatServices.factory('Phone', ['$resource',
-  function($resource){
-    return $resource('phones/:phoneId.json', {}, {
-      query: {method:'GET', params:{phoneId:'phones'}, isArray:true}
-    });
-  }]);
-
 var schedulecatServices = angular.module('schedulecatServices', ['ngResource']);
 
 schedulecatServices.factory('ScheduleMenu', ['$resource',
   function($resource) {
-    return $resource('schedule/menu.json', {}, {
+    return $resource('schedule/schedule.json', {}, {
       query: {method: 'GET', params: {}, isArray: false}
     });
   }]);
+
+var eventService = angular.module('eventService', ['ngResource']);
+
+eventService.factory('Event', ['$resource',
+  function($resource) {
+    return $resource('schedule/events.json', {}, {
+      query: {method: 'GET', params: {}, isArray: true}
+    });
+  }]);    
 
 var eventInfoService = angular.module('eventInfoService', ['ngResource']);
 

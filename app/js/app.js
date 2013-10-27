@@ -8,7 +8,7 @@ var scheduleApp = angular.module('scheduleApp', [
   'schedulecatControllers',
   'schedulecatServices',
   'scheduleFilters',
-  'eventControllers',
-  'eventInfoService'
+  'eventInfoService',
+  'eventService'
 ]);
 
