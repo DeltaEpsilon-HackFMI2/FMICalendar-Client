@@ -41,6 +41,11 @@
   </div> 
   <div id="info_panel" ng-controller="EventInfoCtrl">
     {{eventMetaInfo.Meta.Name}}
+    <ul class="comments">
+      <li ng-repeat="comment in eventMetaInfo.Comments">
+        {{comment.name + "(" + comment.From + "," + comment.To + ") : " + comment.Text }} 
+      </li>
+    </ul>
   </div>
   </div>
   <div id="footer_panel">
