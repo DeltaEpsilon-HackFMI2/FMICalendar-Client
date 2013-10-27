@@ -6,8 +6,9 @@ var schedulecatControllers = angular.module('schedulecatControllers', []);
 
 schedulecatControllers.controller('ScheduleMenuCtrl', ['$scope', 'ScheduleMenu',
     function($scope, ScheduleMenu) {
-      var root_elem = 'Разписание';
+      var root_elem = 'Home';
       $scope.menu = ScheduleMenu.query(function() {
+      	console.log("ScheduleMenu");
         $scope.root = $scope.menu[root_elem];
         $scope.history = [root_elem];
       });
@@ -39,7 +40,7 @@ var eventControllers = angular.module('eventControllers', []);
 eventControllers.controller('EventCtrl', ['$scope', 'EventInfo',
     function($scope, EventInfo) {
       /* config object */
-      console.log($scope);
+      //console.log($scope);
       $scope.uiConfig = {
         calendar:{
           header:{
