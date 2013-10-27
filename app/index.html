@@ -21,10 +21,10 @@
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
 </head>
-<body ng-controller="ScheduleMenuCtrl">
+<body>
 
 <div id="main_panel">
-  <div id="menu_panel">
+  <div id="menu_panel" ng-controller="ScheduleMenuCtrl">
     <ul class="menu">
       <li ng-repeat="history_elem in history">
         <button ng-click="setRootLevel(history_elem)">{{history_elem}}</button>
@@ -35,12 +35,12 @@
       </li> 
     </ul>
   </div>    
-  <div class="callendar_panel">
+  <div class="callendar_panel" >
     <div id="calendar">
     </div>
   </div> 
-  <div id="info_panel">
-    </br>&nbsp
+  <div id="info_panel" ng-controller="EventInfoCtrl">
+    {{eventMetaInfo.Meta.Name}}
   </div>
   </div>
   <div id="footer_panel">

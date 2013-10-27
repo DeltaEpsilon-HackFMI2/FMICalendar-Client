@@ -2,25 +2,6 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
-
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone',
-  function($scope, Phone) {
-    $scope.phones = Phone.query();
-    $scope.orderProp = 'age';
-  }]);
-
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
-    });
-
-    $scope.setImage = function(imageUrl) {
-      $scope.mainImageUrl = imageUrl;
-    }
-  }]);
-
 var schedulecatControllers = angular.module('schedulecatControllers', []);
 
 schedulecatControllers.controller('ScheduleMenuCtrl', ['$scope', 'ScheduleMenu',
@@ -51,4 +32,11 @@ schedulecatControllers.controller('ScheduleMenuCtrl', ['$scope', 'ScheduleMenu',
           $scope.history = [root_elem, rootUri];
         }
       };
+    }]);
+
+var eventControllers = angular.module('eventControllers', []);
+
+eventControllers.controller('EventInfoCtrl', ['$scope', 'EventInfo',
+    function($scope, EventInfo) {
+      $scope.eventMetaInfo = EventInfo.query();
     }]);

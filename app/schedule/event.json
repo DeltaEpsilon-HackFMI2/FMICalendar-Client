@@ -5,10 +5,10 @@
 		"Place":"Test Place 1"
 	},
 	"Comments":[ 
-		{"Name":"Test Commenter 1", "From":"27.10.2013", "To":"27.11.2013", "Text":"Test Text 1"}
-		{"Name":"Test Commenter 1", "From":"30.10.2013", "To":"5.11.2013", "Text":"Test Text 2"}
-		{"Name":"Test Commenter 1", "From":"3.10.2013", "To":"11.11.2013", "Text":"Test Text 3"}
-		{"Name":"Test Commenter 2", "From":"1.10.2013", "To":"27.11.2014", "Text":"Test Text 4"}
+		{"Name":"Test Commenter 1", "From":"27.10.2013", "To":"27.11.2013", "Text":"Test Text 1"},
+		{"Name":"Test Commenter 1", "From":"30.10.2013", "To":"5.11.2013", "Text":"Test Text 2"},
+		{"Name":"Test Commenter 1", "From":"3.10.2013", "To":"11.11.2013", "Text":"Test Text 3"},
+		{"Name":"Test Commenter 2", "From":"1.10.2013", "To":"27.11.2014", "Text":"Test Text 4"},
 		{"Name":"Test Commenter 2", "From":"22.10.2013", "To":"23.11.2013", "Text":"Test Text 5"}
 	]
 }

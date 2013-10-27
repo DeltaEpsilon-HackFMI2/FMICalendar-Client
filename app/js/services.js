@@ -19,3 +19,12 @@ schedulecatServices.factory('ScheduleMenu', ['$resource',
       query: {method: 'GET', params: {}, isArray: false}
     });
   }]);
+
+var eventInfoService = angular.module('eventInfoService', ['ngResource']);
+
+eventInfoService.factory('EventInfo', ['$resource',
+  function($resource) {
+    return $resource('schedule/event.json', {}, {
+      query: {method: 'GET', params: {}, isArray: false}
+    });
+  }]);    

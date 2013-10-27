@@ -31,5 +31,7 @@ var scheduleApp = angular.module('scheduleApp', [
   // 'ngRoute',
   'schedulecatControllers',
   'schedulecatServices',
-  'scheduleFilters'
+  'scheduleFilters',
+  'eventControllers',
+  'eventInfoService'
 ]);
