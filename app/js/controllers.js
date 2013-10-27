@@ -42,7 +42,6 @@ eventControllers.controller('EventCtrl', ['$scope', 'EventInfo',
       console.log($scope);
       $scope.uiConfig = {
         calendar:{
-          height: 450,
           header:{
             left: 'prev,next today',
             center: 'title',

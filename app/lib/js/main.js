@@ -7,15 +7,11 @@ $(document).ready(function() {
 
   $('#calendar').fullCalendar({
     eventClick: function(calEvent, jsEvent, view) {
-
-	  	alert('Event: ' + calEvent.title);
-	  	alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-	 		alert('View: ' + view.name);
-
-	  	// change the border color just for fun
+			console.log(calEvent);
 	  	$(this).css('border-color', 'red');
 
-		},
+		}});
+		$('#calendar').fullCalendar({
     header: {
         left: 'prev,next today',
     center: 'title',
@@ -58,6 +54,7 @@ $(document).ready(function() {
         id: 999,
     },
     {
+    		id: 123,
         title: 'Lunch',
         start: new Date(y, m, d, 12, 0),
         end: new Date(y, m, d, 14, 0),

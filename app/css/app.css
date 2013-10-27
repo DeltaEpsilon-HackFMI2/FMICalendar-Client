@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Belleza|Joti+One|Mystery+Quest);
 /*
  * CSS reset
  */
@@ -11,7 +12,6 @@ iframe,
 h1,
 h2,
 h3,
-
 h4,
 h5,
 h6,
@@ -58,7 +58,7 @@ tfoot,
 thead,
 tr,
 th,
-td {
+td{
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -70,72 +70,133 @@ td {
 	vertical-align: baseline;
 }
 
-html,body { 
-    overflow:hidden;
+html,body{ 
+	background-color: #F0F8FA !important;
 	height: 100%;
+	font-family: 'Belleza', sans-serif !important;
+	overflow: hidden;
 }
 
-#menu_panel {
+#menu_panel{
+	float: left;
+	height: 95%;
+	width: 70%;
+	margin: auto;
+	padding-top: 5%;
+}
+
+.header{
+	position: relative;
+	height: 10%;
+	width: 100%;
+	padding-top: 1%;
+	padding-left: 2%;
+	padding-bottom: 3%;
+}
+
+#panel_right{
 	float: left;
 	height: 95%;
 	width: 20%;
-	
 }
-.header{
- position:relative;
- height:10%;
-width: 100%;
- 
-}
+
 .menu{
- position:inline;
- height:90%;
-width: 100%; 
- background-color: #C0C0C0;
+	position: inline;
+	height: 80%;
+	width: 100%; 
 }
+
 .callendar_panel{
 	float: left;
 	height: 95%;
-    display:inline-block;
+	display: inline-block;
 	width: 60%;
-	
-
+	font-family: 'Belleza', sans-serif;
 }
+
 #info_panel{
 	float: left;
 	height: 95%;
 	width: 20%;
 	top:10%;
-
-
 }
-#footer_panel {
-	background-color:red;
+
+#footer_panel{
+	width: 20%;
+	height: 25px;
+	font-family: 'Mystery Quest', cursive;
+	right: 0px;
+	background-color: #49afcd;
+	*background-color: #2f96b4;
+	background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+  background-repeat: repeat-x;
+  border-color: #2f96b4 #2f96b4 #1f6377;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); 
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2f96b4', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+	position: fixed;
+	bottom: 0px;
+}
+
+.calbox{
+	position: relative;
+	width: 19%;	
+	height: 7%;
+	padding-left: 1%;
+	padding-top: 1%;
+	border: 2px solid #00FF00;
+}
+
+#calendar{
+	background-color: #FCFEFF !important;
+	-moz-box-shadow:    1px 1px 2px 2px #F0E0FA;
+  -webkit-box-shadow: 1px 1px 2px 2px #F0E0FA;
+  box-shadow:         1px 1px 2px 2px #F0E0FA;
 	width: 100%;
-	height:20px;
 }
 
-.calbox
-{
- position:relative;
- width:22%;
- height:7%;
-padding-left:1%;
-padding-top:1%;
-border:2px solid #00FF00;
- background-color:#C0C0C0;
+#main_panel{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
 }
 
-#calendar {
-		width: 100%;
-		margin: 0 auto;
-		}
-#main_panel
-{
- width:100%;
-display:inline-block;
-
+.glowing-border:focus { 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
+.shadow {
+  -moz-box-shadow:    1px 1px 2px 2px #ccc;
+  -webkit-box-shadow: 1px 1px 2px 2px #ccc;
+  box-shadow:         1px 1px 2px 2px #ccc;
+}
 
+.shadowInner {
+   -moz-box-shadow:    inset 0 0 5px #000000;
+   -webkit-box-shadow: inset 0 0 5px #000000;
+   box-shadow:         inset 0 0 5px #000000;
+}
+
+.info{
+	width:90%;
+	height:40%;
+	padding-left:1%;
+	padding-top:1%;
+	padding-bottom:2%;
+	margin: 0 auto;
+}
+
+.comments{ 
+	margin: 0 auto;
+	width:90%;
+	height:40%;
+	padding-left:1%;
+	padding-top:2%;
+}
 
