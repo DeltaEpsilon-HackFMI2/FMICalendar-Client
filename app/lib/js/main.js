@@ -1,71 +1,81 @@
 $(document).ready(function() {
 
-    var date = new Date();
-    var d = date.getDate();
-    var m = date.getMonth();
-    var y = date.getFullYear();
+  var date = new Date();
+  var d = date.getDate();
+  var m = date.getMonth();
+  var y = date.getFullYear();
 
-    $('#calendar').fullCalendar({
-        header: {
-            left: 'prev,next today',
-        center: 'title',
-        right: ''
+  $('#calendar').fullCalendar({
+    eventClick: function(calEvent, jsEvent, view) {
 
-        },
-        monthNames:['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли','Август', 'Септември', 'Октомври', 							'Ноември', 'Декември'],
-        monthNamesShort:['Ян', 'Февр', 'Март', 'Апр', 'Май', 'Юни', 'Юли',
-        'Авг', 'Септ', 'Окт', 'Нов', 'Дек'],
-        dayNames:['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'],
-        dayNamesShort:['Нед', 'Пон', 'Вт', 'Ср', 'Четв', 'Пк', 'Съб'],
-        buttonText: {
-            today:'ДНЕС'
-        },
-        allDayText:'събития:',
-        minTime: 7,
-        maxTime: 22,
-        defaultView:'agendaWeek',
-        editable: false,
-        firstDay: 1,
-        timeFormat: 'H(:mm)',
-        axisFormat:'H(:mm)',
-        events: [
-        {
-            title: 'All Day Event',
-            start: new Date(y, m, 1)
-        },
-        {
-            title: 'Long Event',
-            start: new Date(y, m, d-5),
-            end: new Date(y, m, d-2)
-        },
-        {
-            id: 999,
-            title: 'Repeating Event',
-            start: new Date(y, m, d-3, 16, 0),
-            allDay: false
-        },
-        {
-            id: 999,
-        },
-        {
-            title: 'Lunch',
-            start: new Date(y, m, d, 12, 0),
-            end: new Date(y, m, d, 14, 0),
-            allDay: false
-        },
-        {
-            title: 'Birthday Party',
-            start: new Date(y, m, d+1, 19, 0),
-            end: new Date(y, m, d+1, 22, 30),
-            allDay: false
-        },
-        {
-            title: 'Click for Google',
-            start: new Date(y, m, 28),
-            end: new Date(y, m, 29),
-            url: 'http://google.com/'
-        }
-    ]
-    });
+	  	alert('Event: ' + calEvent.title);
+	  	alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
+	 		alert('View: ' + view.name);
+
+	  	// change the border color just for fun
+	  	$(this).css('border-color', 'red');
+
+		},
+    header: {
+        left: 'prev,next today',
+    center: 'title',
+    right: ''
+
+    },
+    monthNames:['Януари', 'Февруари', 'Март', 'Април', 'Май', 'Юни', 'Юли','Август', 'Септември', 'Октомври', 							'Ноември', 'Декември'],
+    monthNamesShort:['Ян', 'Февр', 'Март', 'Апр', 'Май', 'Юни', 'Юли',
+    'Авг', 'Септ', 'Окт', 'Нов', 'Дек'],
+    dayNames:['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'],
+    dayNamesShort:['Нед', 'Пон', 'Вт', 'Ср', 'Четв', 'Пк', 'Съб'],
+    buttonText: {
+        today:'ДНЕС'
+    },
+    allDayText:'събития:',
+    minTime: 7,
+    maxTime: 22,
+    defaultView:'agendaWeek',
+    editable: false,
+    firstDay: 1,
+    timeFormat: 'H(:mm)',
+    axisFormat:'H(:mm)',
+    events: [
+    {
+        title: 'All Day Event',
+        start: new Date(y, m, 1)
+    },
+    {
+        title: 'Long Event',
+        start: new Date(y, m, d-5),
+        end: new Date(y, m, d-2)
+    },
+    {
+        id: 999,
+        title: 'Repeating Event',
+        start: new Date(y, m, d-3, 16, 0),
+        allDay: false
+    },
+    {
+        id: 999,
+    },
+    {
+        title: 'Lunch',
+        start: new Date(y, m, d, 12, 0),
+        end: new Date(y, m, d, 14, 0),
+        allDay: false
+    },
+    {
+        title: 'Birthday Party',
+        start: new Date(y, m, d+1, 19, 0),
+        end: new Date(y, m, d+1, 22, 30),
+        allDay: false
+    },
+    {
+        title: 'Click for Google',
+        start: new Date(y, m, 28),
+        end: new Date(y, m, 29),
+        url: 'http://google.com/'
+    }
+  ]
+  });
 });
 
