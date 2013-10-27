@@ -7,16 +7,24 @@
   <link rel="stylesheet" href="lib/css/bootstrap.css">
   <link rel="stylesheet" href="lib/css/fullcalendar.css">
 
-  <script src="lib/jquery/jquery-1.10.2.js"></script>
-  <script src="lib/js/fullcalendar.min.js"></script>
-  <script src="lib/js/main.js"></script>
-  <script src="lib/angular/angular.js"></script>
-  <script src="lib/angular/angular-animate.js"></script>
-  <script src="lib/angular/angular-resource.js"></script>
-  <script src="lib/angular/angular-route.js"></script>
+  <!-- <script src="lib/jquery/jquery&#45;1.10.2.js"></script> -->
+  <!-- <script src="lib/js/fullcalendar.min.js"></script> -->
+  <!-- <script src="lib/js/main.js"></script> -->
+  <!-- <script src="lib/angular/angular.js"></script> -->
+  <!-- <script src="lib/angular/angular&#45;animate.js"></script> -->
+  <!--  -->
+  <!-- <script src="lib/angular/angular&#45;route.js"></script> -->
+  
+  <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="lib/angular/angular-route.js"></script>
+  <script type="text/javascript" src="lib/angular/angular-resource.js"></script>
+  <script type="text/javascript" src="bower_components/fullcalendar/fullcalendar.js"></script>
+  <script type="text/javascript" src="bower_components/fullcalendar/gcal.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js"></script>
 
   <script src="js/app.js"></script>
-  <script src="js/animations.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/services.js"></script>
@@ -35,18 +43,22 @@
       </li> 
     </ul>
   </div>    
-  <div class="callendar_panel" >
-    <div id="calendar">
-    </div>
-  </div> 
-  <div id="info_panel" ng-controller="EventInfoCtrl">
-    {{eventMetaInfo.Meta.Name}}
-    <ul class="comments">
-      <li ng-repeat="comment in eventMetaInfo.Comments">
-        {{comment.name + "(" + comment.From + "," + comment.To + ") : " + comment.Text }} 
-      </li>
-    </ul>
+  <!-- <div class="callendar_panel" > -->
+  <!--   <div id="calendar"> -->
+  <!--   </div> -->
+  <!-- </div>  -->
+  <div ng-controller="EventCtrl" class="callendar_panel">
+    <div id="calendar" calendar="myCalendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources">
   </div>
+  </div>
+  <!-- <div id="info_panel" ng&#45;controller="EventInfoCtrl"> -->
+  <!--   {{eventMetaInfo.Meta.Name}} -->
+  <!--   <ul class="comments"> -->
+  <!--     <li ng&#45;repeat="comment in eventMetaInfo.Comments"> -->
+  <!--       {{comment.name + "(" + comment.From + "," + comment.To + ") : " + comment.Text }}  -->
+  <!--     </li> -->
+  <!--   </ul> -->
+  <!-- </div> -->
   </div>
   <div id="footer_panel">
   </div> 
