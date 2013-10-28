@@ -36,15 +36,12 @@ schedulecatControllers.controller('ScheduleCtrl', ['$scope', 'ScheduleMenu','Eve
           $scope.root = new_root;
           $scope.history = new_history
         } else if(rootUri in $scope.root) {
-          console.log(rootUri);
-          // if($scope.root[rootUri].length == 0) {
-          //   alert('dddd');
-          //   $scope.loadEvents();
-          //   return;
-          // }
-          
-          $scope.history.push(rootUri);
-          $scope.root = $scope.root[rootUri];
+          if(Object.keys($scope.root[rootUri]).length == 0) {
+            $scope.loadEvents();
+          } else {
+            $scope.history.push(rootUri);
+            $scope.root = $scope.root[rootUri];
+          }
         } else {
           $scope.root = $scope.menu[rootUri];
           $scope.history = [root_elem, rootUri];
@@ -52,8 +49,7 @@ schedulecatControllers.controller('ScheduleCtrl', ['$scope', 'ScheduleMenu','Eve
       };
       
       $scope.loadEvents = function() {
-        alert('aaa');
-        $scope.events = Event.query();  
+        $scope.uiConfig['events'] = Event.query();
       }; 
 
       /* config object */
