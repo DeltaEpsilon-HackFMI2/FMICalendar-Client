@@ -2,15 +2,6 @@
 
 /* Controllers */
 
-function isEmpty(map) {
-  for(var key in map) {
-    if (map.hasOwnProperty(key)) {
-      return false;
-    }
-  }
-  return true;
-}
-
 var schedulecatControllers = angular.module('schedulecatControllers', []);
 
 schedulecatControllers.controller('ScheduleCtrl', ['$scope', 'ScheduleMenu','Event',
@@ -49,7 +40,12 @@ schedulecatControllers.controller('ScheduleCtrl', ['$scope', 'ScheduleMenu','Eve
       };
       
       $scope.loadEvents = function() {
-        $scope.uiConfig['events'] = Event.query();
+        var events = Event.query(function() {
+          $scope.events.length = 0;
+          for(var i = 0; i < events.length; i++) {
+            $scope.events.push(events[i]);
+          } 
+        });
       }; 
 
       /* config object */
@@ -75,14 +71,7 @@ schedulecatControllers.controller('ScheduleCtrl', ['$scope', 'ScheduleMenu','Eve
           axisFormat:'H(:mm)'
         }
       };
-    }]);
 
-// eventControllers.controller('EventInfoCtrl', ['$scope', 'EventInfo',
-//     function($scope, EventInfo) {
-//       // $('#calendar').fullCalendar({
-//       //   eventClick: function(calEvent, jsEvent, view) {
-//       //     // $scope.eventMetaInfo = EventInfo.query();
-//       //     console.log(calEvent);
-//       //   }
-//       // });
-//     }]);
+      $scope.events = [];
+      $scope.eventSources = [$scope.events];
+    }]);

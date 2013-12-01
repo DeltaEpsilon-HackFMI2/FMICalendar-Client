@@ -6,15 +6,7 @@
   <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="lib/css/bootstrap.css">
   <link rel="stylesheet" href="lib/css/fullcalendar.css">
-
-  <!-- <script src="lib/jquery/jquery&#45;1.10.2.js"></script> -->
-  <!-- <script src="lib/js/fullcalendar.min.js"></script> -->
-  <!-- <script src="lib/js/main.js"></script> -->
-  <!-- <script src="lib/angular/angular.js"></script> -->
-  <!-- <script src="lib/angular/angular&#45;animate.js"></script> -->
-  <!--  -->
-  <!-- <script src="lib/angular/angular&#45;route.js"></script> -->
-  
+ 
   <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
   <script type="text/javascript" src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
   <script type="text/javascript" src="bower_components/angular/angular.js"></script>
@@ -49,7 +41,7 @@
 		</div>  
 		<div class="callendar_panel">
 			<div>
-		 		<div id="calendar" config="uiConfig.calendar" ui-calendar="uiConfig.calendar" ng-model="events"></div>
+		 		<div id="calendar" config="uiConfig.calendar" calendar="myCalendar" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
 			</div>
 		</div>
 		

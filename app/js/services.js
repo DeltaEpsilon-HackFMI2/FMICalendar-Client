@@ -6,7 +6,7 @@ var schedulecatServices = angular.module('schedulecatServices', ['ngResource']);
 
 schedulecatServices.factory('ScheduleMenu', ['$resource',
   function($resource) {
-    return $resource('schedule/schedule.json', {}, {
+    return $resource('http://fmihelper.eu/rest-api/schedule/', {}, {
       query: {method: 'GET', params: {}, isArray: false}
     });
   }]);
